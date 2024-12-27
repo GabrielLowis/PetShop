@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/login.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <h1>Login PetShop</h1>
+  </header>
+
+
+
+  <main>
+    <section>
+      <div class="login-container">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+          </svg>
+        </div>
+        <h1>Acesse sua conta</h1>
+        <p>Não é necessário logar para certos serviços</p>
+      </div>
+      <form id="loginForm">
+        <div>
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="Coloque o seu email" required />
+        </div>
+
+        <div>
+          <label for="password">Senha:</label>
+          <input id="password" type="password" placeholder="Coloque sua senha" required />
+        </div>
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <div id="footer">
+        <div id="risco"></div>
+        <p>Ainda não tem uma conta?</p>
+        <div id="risco"></div>
+      </div>
+      <a href="./singup.html">Cadastre-se agora!</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Petshop - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginForm = document.getElementById("loginForm");
+
+      loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+          const response = await fetch("http://localhost:8080/api/login&quot;", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+          });
+
+          if (response.ok) {
+            alert("Login bem-sucedido!");
+            window.location.href = "./index";
+          } else {
+            alert("E-mail ou senha incorretos. Tente novamente.");
+          }
+        } catch (error) {
+          console.error("Erro ao conectar ao servidor:", error);
+          alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

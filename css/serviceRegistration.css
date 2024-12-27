@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #846b53; /* Warm orange tone */
+    --secondary-color: #f2e7c4; /* Soft beige */
+    --accent-color: #6cc24a; /* Green for pet care */
+    --text-color: #444; /* Dark text for readability */
+    --background-color: #fffef5; /* Light yellowish background */
+    --hover-color: #e5883a; /* Darker orange for hover */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    /* text-align: center; */
+}
+
+main {
+    max-width: 1200px;
+    height: 75vh;
+    margin: 30px auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+input[type="text"] {
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    a{
+        color: white;
+        text-decoration: none;
+    }
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+footer {
+    height: 5vh;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+footer p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

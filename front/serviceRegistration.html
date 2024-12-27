@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/serviceRegistration.css">
+    <title>Registrar Serviço</title>
+</head>
+<body>
+    <header>
+        <h1>Petshop - Registrar Serviço</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Cadastrar serviço</h2>
+            <form id="serviceForm">
+                <div>
+                    <label for="nameService">Serviço</label>
+                    <input type="text" id="nameService" placeholder="Digite o serviço que você deseja" required>
+                </div>
+                <div>
+                    <label for="describeService">Descrição do serviço</label>
+                    <input type="text" id="describeService" placeholder="Descreva o serviço" required>
+                </div>
+                <div>
+                    <label for="priceService">Preço do serviço</label>
+                    <input type="text" id="priceService" placeholder="Qual o valor do serviço?" required>
+                </div>
+                
+                <button type="submit"> <a href="./index.html">Cadastrar Serviço</a></button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Petshop - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const serviceForm = document.getElementById("serviceForm");
+
+        serviceForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const nameService = document.getElementById("name").value;
+            const describeService = document.getElementById("describeService").value;
+            const priceService = document.getElementById('priceService').value;
+
+            try {
+                const response = await fetch("http://localhost:8080/api/login&quot;", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ nameService, describeService, priceService })
+                });
+
+                if (response.ok) {
+                    alert("Login bem-sucedido!");
+                    window.location.href = "./index";
+                } else {
+                    alert("E-mail ou senha incorretos. Tente novamente.");
+                }
+            } catch (error) {
+                console.error("Erro ao conectar ao servidor:", error);
+                alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
+            }
+        });
+    });
+  </script>
+</body>
+</html>

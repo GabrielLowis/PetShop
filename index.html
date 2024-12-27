@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Carinhos & Patas</title>
+</head>
+
+<body>
+    <header>
+        <div id="title">
+            <h1>Carinhos e Patas!</h1>
+            <input type="text" placeholder="Para seu pet ou sua casa, procure aqui">
+            <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+                <a href="./login.html">Entre ou Cadastre-se</a>
+            </h3>
+        </div>
+    </header>
+    <nav>
+        <a href="./login.html">Login</a>
+        <a href="./singup.html">Cadastre-se</a>
+        <a href="./petRegister.html">Registrar Pet</a>
+        <a href="./serviceRegistration.html">Serviços</a>
+        <a href="./serviceScheduling.html">Agendamento</a>
+    </nav>
+
+    <main>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide">
+                    <img src="https://cms.cobasi.com.br/uploads/20241203_petmais_1152x310_6d4ac61444.webp" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="https://cms.cobasi.com.br/uploads/20241203_ferias_1152x310_c6e2b18976.webp" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="https://cms.cobasi.com.br/uploads/20241203_sazonais_1152x310_2_bae5655912.webp" alt="Slide 3">
+                </div>
+            </div>
+            <div class="navigation">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+            </div>
+            <div class="indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
+        </div>
+
+        <section class="links-container">
+            <a href="#" class="link-card">
+                <div class="icon">🔒</div>
+                <div class="text">
+                    <h3>Só na C&P</h3>
+                    <p>Produtos exclusivos</p>
+                </div>
+            </a>
+
+            <a href="#" class="link-card">
+                <div class="icon">⭐</div>
+                <div class="text">
+                    <h3>Amigo C&P</h3>
+                    <p>Pontue e economize</p>
+                </div>
+            </a>
+
+            <a href="#" class="link-card">
+                <div class="icon">📅</div>
+                <div class="text">
+                    <h3>Compra Programada</h3>
+                    <p>Programe e economize</p>
+                </div>
+            </a>
+
+            <a href="#" class="link-card">
+                <div class="icon">✂️</div>
+                <div class="text">
+                    <h3>Serviços Pet</h3>
+                    <p>Banho e Tosa e mais!</p>
+                </div>
+            </a>
+
+            <a href="#" class="link-card">
+                <div class="icon">💙</div>
+                <div class="text">
+                    <h3>C&P Cuida</h3>
+                    <p>Transformando vidas</p>
+                </div>
+            </a>
+        </section>
+
+        <section class="cards-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://cms.cobasi.com.br/uploads/banho_tosa_v3_3703115de7.png" alt="Ração Úmida">
+                </div>
+                <div class="card-content">
+                    <h3>🛀🏽 Banho e Tosa 🛀🏽</h3>
+                    <p>Um banho gostoso para seu Pet se higienizar, e ficar lindo!</p>
+                    <button>Comprar agora</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://clinicatitiu.com.br/wp-content/uploads/2022/10/Designsemnome1.jpg" alt="Areias Higiênicas">
+                </div>
+                <div class="card-content">
+                    <h3>🩺 Consulta Veterinária 🩺</h3>
+                    <p>Cuide da saúde do seu pet com uma consulta veterinária especializada!</p>
+                    <button>Comprar agora</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://cobasiblog.blob.core.windows.net/production-ofc/2021/01/hotel-para-cachorro-meio-2.png" alt="Dog Chow Extra Life">
+                </div>
+                <div class="card-content">
+                    <h3>🏡 Hospedagem Pet 🏡</h3>
+                    <p>Seu pet merece conforto! com hospedagem segura e carinhosa!</p>
+                    <button>Comprar agora</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <p>Oferecemos os melhores cuidados para o seu pet ❤ </p>
+        </div>
+        <p>&copy; 2024 Petshop - Todos os direitos reservados.</p>
+
+        <img src="https://cms.cobasi.com.br/uploads/footer_image_84ec00ee7a.svg" alt="Imagem bacana">
+    </footer>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        indicators.forEach((indicator) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = parseInt(indicator.dataset.slide);
+                updateSlider();
+            });
+        });
+    </script>
+</body>
+
+</html>
